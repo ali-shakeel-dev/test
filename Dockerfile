@@ -6,10 +6,7 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 
-RUN gem update --system && \
-    bundle install && \
-    rm -rf ~/.bundle && \
-    bundle exec bootsnap precompile --gemfile
+RUN gem update --system
 
 ARG RUBY_VERSION=3.1.2
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
